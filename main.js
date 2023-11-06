@@ -3,10 +3,27 @@
 const firstName = 'r0ulito';
 const lastName = 'formateur';
 
+const helloWorld = (
+    <h1>
+        Hello <FirstName firstName={firstName} />{" "}
+        <LastName lastName={lastName} />
+    </h1>
+);
 
-// Solution sans bonus
+/* Solution sans bonus
 const helloWorld = <h1>Hello <span>{firstName[0].toUpperCase() + firstName.slice(1)}</span> <span className="red-text">{lastName.toUpperCase()}</span></h1>;
+*/
+// Composant FirstName
+function FirstName(props) {
+    const formatFirstName = (value) => value[0].toUpperCase() + value.slice(1);
+    return <span>{formatFirstName(props.firstName)}</span>;
+}
 
+// Composant LastName
+function LastName(props) {
+    const formatLastName = (value) => value.toUpperCase();
+    return <span className="red-text">{formatLastName(props.lastName)}</span>;
+}
 
 
 /**
