@@ -77,25 +77,35 @@ ReactDOM.render(<Clock />, document.querySelector('#app'));  */
 
 
 function Clock(props) {
-    React.useEffect(() => {
-        tick();        
-    }, []);
-    
-    const [date, setDate] = React.useState(new Date());
+  React.useEffect(() => {
+      tick();        
+  }, []);
+  
+  const [date, setDate] = React.useState(new Date());
+  const [textColor, setTextColor] = React.useState('#000000');
 
-    const tick = () => {
-        setInterval(() => {
-            setDate(new Date())
-        }, 1000)
-    }
-    
+  const tick = () => {
+      setInterval(() => {
+          setDate(new Date())
+      }, 1000);
+  }
+  
+  const changeColor = () => {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    setTextColor(randomColor);
+  }
 
-    return (
-        <div>
-            <h1>Hello world</h1>
-            <h2>Il est {date.toLocaleTimeString()}.</h2>
-        </div>
-        );
+  const resetColor = () => {
+    setTextColor('#000000');
+  }
+  return (
+      <div>
+          <h1>Hello world</h1>
+          <h2 style={{ color: textColor }}>Il est {date.toLocaleTimeString()}.</h2>
+          <button onClick={changeColor}>Change Color</button>
+          <button onClick={resetColor}>Reset Color</button>
+      </div>
+  );
 }
 
 ReactDOM.render(<Clock />, document.querySelector('#app'));
