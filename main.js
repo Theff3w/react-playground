@@ -7,7 +7,7 @@ const helloWorld = (
     <h1>
         Hello <FirstName firstName={firstName} />{" "}
         <LastName lastName={lastName} />
-    </h1>
+    </h1>jrelance
 );
 
 /* Solution sans bonus
