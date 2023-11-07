@@ -57,7 +57,29 @@ function Clock(props) {
 
 ReactDOM.render(<Clock />, document.querySelector('#app'));
 
+function UserGreeting(props) {
+  return <h1>Bienvenue !</h1>;
+}
 
+function GuestGreeting(props) {
+  return <h1>Veuillez vous inscrire.</h1>;
+}
 
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
+  const toggleLoginStatus = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
 
+  return (
+    <div>
+      {isLoggedIn ? <UserGreeting /> : <GuestGreeting />}
+      <button onClick={toggleLoginStatus}>
+        {isLoggedIn ? "Se déconnecter" : "Se connecter"}
+      </button>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
