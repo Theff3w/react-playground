@@ -1,3 +1,46 @@
-.red-text {
+/* .red-text {
     color: red;
-}
+} */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .user-card {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin: 10px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .user-card:hover {
+    transform: scale(1.05);
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .user-card p:first-child {
+    margin-top: 0;
+  }
+  
+  .user-card p:last-child {
+    margin-bottom: 0;
+  }
